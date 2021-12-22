@@ -1,0 +1,7 @@
+clone: bring a repository from the web to the local machine
+add: track the files and save in git
+commit: save your files into github
+push: upload git comits
+pull: the opposite of push (download the changes)
+
+
