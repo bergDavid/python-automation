@@ -5,6 +5,7 @@ import json
 import time
 import ssl
 import sys
+import os
 
 api_key = False
 # If you have a Google Places API key, enter it here
@@ -19,7 +20,7 @@ else :
 # Additional detail for urllib
 # http.client.HTTPConnection.debuglevel = 1
 
-conn = sqlite3.connect('geodata.sqlite')
+conn = sqlite3.connect('code3\geodata\geodata.sqlite')
 cur = conn.cursor()
 
 cur.execute('''
@@ -30,7 +31,9 @@ ctx = ssl.create_default_context()
 ctx.check_hostname = False
 ctx.verify_mode = ssl.CERT_NONE
 
-fh = open("where.data")
+curdirectory = os.path.dirname(os.path.abspath(__file__))
+fname = os.path.join(curdirectory, "where.data")
+fh = open(fname)
 count = 0
 for line in fh:
     if count > 200 :
