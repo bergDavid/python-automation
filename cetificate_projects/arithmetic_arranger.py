@@ -1,3 +1,6 @@
+from multiprocessing.sharedctypes import Value
+
+
 def arithmetic_arranger(problems, *args):
   #function: arithmetic-formatter
 
@@ -64,3 +67,17 @@ def arithmetic_arranger(problems, *args):
       output = f"{result[0]}\n{result[1]}\n{result[2]}"
   
   return output
+
+desc = "restaurant and more food for dessert"
+value = -15.89
+if len(desc) >= 23:
+  desc = desc[:23]
+else:
+  desc = f"{str(desc):>{23 - len(desc)}}"
+if len(str(value))>5:
+  endvalue = str(value)[:5]
+else:
+  endvalue = " " * (5 - len(str(value))) + str(value)
+
+finalout = desc + " " + endvalue + "\n"
+print(finalout)
